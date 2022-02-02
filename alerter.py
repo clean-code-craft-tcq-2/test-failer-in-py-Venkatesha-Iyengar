@@ -67,7 +67,7 @@ if __name__ == '__main__':
     alerter_object_1 = Alerter(303.6, real_network_object)
     alerter_object_1.alert_in_celcius()
     print(f'{alert_failure_count} alerts failed.')
-    assert(alert_failure_count==0)
+    assert(alert_failure_count==2)
     print('All is well (maybe!)')
 
     stub_network_object = network_stub_testing()
