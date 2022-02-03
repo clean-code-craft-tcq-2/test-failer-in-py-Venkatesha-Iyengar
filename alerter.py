@@ -57,17 +57,17 @@ class Alerter:
             # However, this code doesn't count failures!
             # Add a test below to catch this bug. Alter the stub above, if needed.
             global alert_failure_count
-            alert_failure_count += 0
+            alert_failure_count += 1
 
 if __name__ == '__main__':
     real_network_object = network_real_implementation()
     #Test with real network implementation 
-    alerter_object_1 = Alerter(400.5, real_network_object)
+    alerter_object_1 = Alerter(100.5, real_network_object)
     alerter_object_1.alert_in_celcius()
     alerter_object_1 = Alerter(303.6, real_network_object)
     alerter_object_1.alert_in_celcius()
     print(f'{alert_failure_count} alerts failed.')
-    assert(alert_failure_count==2)
+    assert(alert_failure_count==1)
     print('All is well (maybe!)')
 
     stub_network_object = network_stub_testing()
@@ -77,5 +77,5 @@ if __name__ == '__main__':
     alerter_object_4 = Alerter(303.6, stub_network_object)
     alerter_object_4.alert_in_celcius()
     print(f'{alert_failure_count} alerts failed.')
-    assert(alert_failure_count==2)
+    assert(alert_failure_count==3)
     print('All is well (maybe!)')

@@ -4,8 +4,9 @@ def print_color_map():
     minor_colors = ["Blue", "Orange", "Green", "Brown", "Slate"]
     for i, major in enumerate(major_colors):
         for j, minor in enumerate(minor_colors):
-            print(f'{i * 5 + j} | {major} | {minor}')
-            list_color_pairs_console_print.append(f'{i * 5 + j} | {major} | {minor}')
+            #{message:{fill}{align}{width}} -> to align
+            print(f'{i * 5 + j + 1:0>2} | {major: >10} | {minor: >10}')
+            list_color_pairs_console_print.append(f'{i * 5 + j + 1:0>2} | {major: >10} | {minor: >10}')
     return len(major_colors) * len(minor_colors), list_color_pairs_console_print
 
 def test_ColorMap_numerical_values(list_color_pairs_console_print):
