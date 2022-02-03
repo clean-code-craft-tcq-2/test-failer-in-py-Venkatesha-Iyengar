@@ -1,4 +1,3 @@
-import test_alerter
 from abc import ABC, abstractmethod
 
 
